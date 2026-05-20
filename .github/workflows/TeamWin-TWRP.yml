@@ -29,7 +29,7 @@ on:
       DEVICE_TREE_URL:
         description: 'DEVICE_TREE_URL'
         required: true
-        default: 'https://github.com/tecno-mt6768/twrp_device_tecno_TECNO-LE7'
+        default: 'https://github.com/isus203/twrp_device_tecno_TECNO-LE7'
       DEVICE_TREE_BRANCH:
         description: 'DEVICE_TREE_BRANCH'
         required: true
