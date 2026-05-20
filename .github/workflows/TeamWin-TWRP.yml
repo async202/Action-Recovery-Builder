@@ -29,7 +29,7 @@ on:
       DEVICE_TREE_URL:
         description: 'DEVICE_TREE_URL'
         required: true
-        default: 'https://github.com/tecno-mt6768/tecno_kh7n_recovery'
+        default: 'https://github.com/tecno-mt6768/twrp_device_tecno_TECNO-LE7'
       DEVICE_TREE_BRANCH:
         description: 'DEVICE_TREE_BRANCH'
         required: true
@@ -37,15 +37,15 @@ on:
       DEVICE_PATH:
         description: 'DEVICE_PATH'
         required: true
-        default: 'device/tecno/KH7n'
+        default: 'device/tecno/LE7n'
       DEVICE_NAME:
         description: 'DEVICE_NAME'
         required: true
-        default: 'KH7n'
+        default: 'LE7n'
       MAKEFILE_NAME:
         description: 'MAKEFILE_NAME'
         required: true
-        default: 'twrp_KH7n'
+        default: 'omni_TECNO-LE7'
       BUILD_TARGET:
         description: 'BUILD_TARGET'
         required: true
@@ -54,7 +54,6 @@ on:
         options:
         - 'boot'
         - 'recovery'
-        - 'vendor_boot'
       APPLY_PATCH:
         description: 'Apply diff.patch'
         required: true
