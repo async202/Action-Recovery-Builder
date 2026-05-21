@@ -37,7 +37,7 @@ on:
       DEVICE_PATH:
         description: 'DEVICE_PATH'
         required: true
-        default: 'device/tecno/TECNO-LE7'
+        default: 'device/tecno/TECNO_LE7'
       DEVICE_NAME:
         description: 'DEVICE_NAME'
         required: true
