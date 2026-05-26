@@ -86,9 +86,10 @@ jobs:
     # You might want to Checkout your repo first, but not mandatory
     - name: Check Out
       uses: actions/checkout@v3
+    # No need for now
     # Cleanup The Actions Workspace Using Custom Composite Run Actions
-    - name: Cleanup
-      uses: rokibhasansagar/slimhub_actions@main
+#    - name: Cleanup
+#      uses: rokibhasansagar/slimhub_actions@main
       # That's it! Now use your normal steps
 
     - name: Prepare the environment
@@ -142,11 +143,12 @@ jobs:
         sudo rm -rf .git
         sudo rm -rf .github
       working-directory: ${{ steps.pwd.outputs.workspace-folder }}
-      
-    - name: Set Swap Space
-      uses: pierotofy/set-swap-space@master
-      with:
-        swap-size-gb: 50
+
+      # No need for now 2
+#    - name: Set Swap Space
+#      uses: pierotofy/set-swap-space@master
+#      with:
+#        swap-size-gb: 50
     
     - name: Apply custom diff.patch
       if: github.event.inputs.APPLY_PATCH == 'true'
