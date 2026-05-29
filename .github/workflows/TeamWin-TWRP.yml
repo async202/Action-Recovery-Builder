@@ -37,15 +37,15 @@ on:
       DEVICE_PATH:
         description: 'DEVICE_PATH'
         required: true
-        default: 'device/tecno/TECNO_LE7'
+        default: 'device/tecno/TECNO_LE7x'
       DEVICE_NAME:
         description: 'DEVICE_NAME'
         required: true
-        default: 'TECNO_LE7'
+        default: 'TECNO_LE7x'
       MAKEFILE_NAME:
         description: 'MAKEFILE_NAME'
         required: true
-        default: 'omni_TECNO_LE7'
+        default: 'twrp_TECNO_LE7x'
       BUILD_TARGET:
         description: 'BUILD_TARGET'
         required: true
