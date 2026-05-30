@@ -164,12 +164,13 @@ jobs:
         lunch ${{ github.event.inputs.MAKEFILE_NAME }}-eng && make clean && make ${{ github.event.inputs.BUILD_TARGET }}image -j$(nproc --all)
       working-directory: ${{ steps.pwd.outputs.workspace-folder }}
 
-    - name: Assembling the installer
-      run: |
-        cp out/target/product/${{ github.event.inputs.DEVICE_NAME }}/./ramdisk-recovery.cpio recovery/installer
-        cd recovery/installer
-        zip -r TWRP-${{ github.event.inputs.DEPLOY_TYPE }}-${{ github.event.inputs.DEVICE_NAME }}-Instaling.zip z .
-      working-directory: ${{ steps.pwd.outputs.workspace-folder }}
+    # Removed because it is: 1. broken on our device 2. if it wasn't, then it would 100% destroy our boot durning "installation" process
+  #  - name: Assembling the installer
+  #    run: |
+  #      cp out/target/product/${{ github.event.inputs.DEVICE_NAME }}/./ramdisk-recovery.cpio recovery/installer
+  #      cd recovery/installer
+  #      zip -r TWRP-${{ github.event.inputs.DEPLOY_TYPE }}-${{ github.event.inputs.DEVICE_NAME }}-Instaling.zip z .
+  #    working-directory: ${{ steps.pwd.outputs.workspace-folder }}
       
     - name: Check the output directory before uploading
       run: |
@@ -182,7 +183,6 @@ jobs:
       with:
         files: | 
           workspace/out/target/product/${{ github.event.inputs.DEVICE_NAME }}/${{ github.event.inputs.BUILD_TARGET }}.img
-          workspace/recovery/installer/TWRP-${{ github.event.inputs.DEPLOY_TYPE }}-${{ github.event.inputs.DEVICE_NAME }}-Instaling.zip
           workspace/out/target/product/${{ github.event.inputs.DEVICE_NAME }}/ramdisk*
         name: TeamWin-TWRP-${{ github.event.inputs.DEPLOY_TYPE }}-${{ github.event.inputs.DEVICE_NAME }}-${{ github.run_id }}
         tag_name: ${{ github.run_id }}
