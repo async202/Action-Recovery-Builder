@@ -161,7 +161,7 @@ jobs:
       run: |
         source build/envsetup.sh
         export ALLOW_MISSING_DEPENDENCIES=true
-        lunch ${{ github.event.inputs.MAKEFILE_NAME }}-eng && make clean && make ${{ github.event.inputs.BUILD_TARGET }}image -j$(nproc --all)
+        lunch ${{ github.event.inputs.MAKEFILE_NAME }}-eng && make clean && rm -rf out/target/product/*/obj/EXECUTABLES/recovery_intermediates && rm -rf out/target/product/*/recovery/root && make ${{ github.event.inputs.BUILD_TARGET }}image -j$(nproc --all)
       working-directory: ${{ steps.pwd.outputs.workspace-folder }}
 
     # Removed because it is: 1. broken on our device 2. if it wasn't, then it would 100% destroy our boot durning "installation" process
